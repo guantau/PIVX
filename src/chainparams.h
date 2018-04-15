@@ -117,6 +117,13 @@ public:
     int Zerocoin_StartTime() const { return nZerocoinStartTime; }
     int Block_Enforce_Invalid() const { return nBlockEnforceInvalidUTXO; }
 
+    int64_t GetMasternodeRewardPercent() const { return nMasternodeRewardPercent; }
+    int64_t GetBudgetPercent() const { return nBudgetPercent; }
+    int64_t GetMinStakeAge() const { return nMinStakeAge; }
+    unsigned int GetModifierInterval() const { return nModifierInterval; }
+    unsigned int GetModifierIntervalRatio() const { return nModifierIntervalRatio; }
+    CAmount GetRequiredMasternodeCollateral() const { return nRequiredMasternodeCollateral; }
+
 protected:
     CChainParams() {}
 
@@ -173,6 +180,13 @@ protected:
     int nBlockFirstFraudulent;
     int nBlockLastGoodCheckpoint;
     int nBlockEnforceInvalidUTXO;
+
+    int64_t nMasternodeRewardPercent;
+    int64_t nBudgetPercent;
+    int64_t nMinStakeAge;
+    unsigned int nModifierInterval;
+    unsigned int nModifierIntervalRatio;
+    CAmount nRequiredMasternodeCollateral;
 };
 
 /**
